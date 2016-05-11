@@ -37,7 +37,7 @@
                this.label1.AutoSize = true;
                this.label1.BackColor = System.Drawing.SystemColors.ControlLightLight;
                this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-               this.label1.Location = new System.Drawing.Point(77, 24);
+               this.label1.Location = new System.Drawing.Point(86, 9);
                this.label1.Name = "label1";
                this.label1.Size = new System.Drawing.Size(257, 50);
                this.label1.TabIndex = 4;
@@ -64,7 +64,9 @@
                this.Controls.Add(this.button3);
                this.Controls.Add(this.label1);
                this.Name = "Form4";
+               this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
                this.Text = "Рецепты";
+               this.Load += new System.EventHandler(this.Form4_Load);
                this.ResumeLayout(false);
                this.PerformLayout();
 

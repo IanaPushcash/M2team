@@ -49,7 +49,10 @@ namespace Maket
           private void productNExists(string str)
           {
               if (str != "Продукт")
-                  label2.Text = label2.Text + "\n" + str;
+              {
+                  if (!label2.Text.Split('\n').Contains(str))
+                      label2.Text = label2.Text + "\n" + str;
+              }
               else MessageBox.Show("Выберите продукт!");
           }
 
@@ -122,6 +125,7 @@ namespace Maket
                   Products.Add(new XElement("Product", s));
               }
               doc.Save("C:\\Fridge1.0\\Products.xml");
+
           }
      }
 }

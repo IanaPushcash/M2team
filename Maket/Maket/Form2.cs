@@ -21,9 +21,10 @@ namespace Maket
 
           private void button1_Click(object sender, EventArgs e)
           {
+
                Form3 f = new Form3();
                f.ShowDialog();
-
+               button4_Click(null, null);
 
 
                //this.Hide();
@@ -61,6 +62,7 @@ namespace Maket
 
           private void button5_Click(object sender, EventArgs e)
           {
+              
                listBox1.Visible = false;
                button5.Enabled = false;
                button4.Enabled = true;
@@ -71,8 +73,12 @@ namespace Maket
               XDocument xDoc = XDocument.Load("C:\\Fridge1.0\\Products.xml");
               foreach (XElement node in xDoc.Root.Nodes())
               {
-                  if (listBox1.SelectedItem.Equals(node.Value))
-                      node.Remove();
+                  try
+                  {
+                      if (listBox1.SelectedItem.Equals(node.Value))
+                          node.Remove();
+                  }
+                  catch (Exception e) { }
               }
               xDoc.Save("C:\\Fridge1.0\\Products.xml");
               listBox1.Items.Remove(listBox1.SelectedItem);

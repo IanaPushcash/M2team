@@ -13,35 +13,48 @@ namespace Maket
 {
      public partial class Form1 : Form
      {
+          Random g = new Random();
+
+          
+
+         
+
           public Form1()
           {
+               int irnd = g.Next(3);
                InitializeComponent();
+               if (irnd == 0) label1.Text="Ну что, покушать захотелось?";
+               else if (irnd == 1) label1.Text = "Лучше бы ты бегал по утрам =)";
+               else if (irnd == 2) label1.Text = "У меня лучшие рецепты, бро!";
+              
           }
 
           private void button1_Click(object sender, EventArgs e)
           {
               
                Form2 f = new Form2();
-               f.Show();
+
+               f.ShowDialog();
 
 
 
-               this.Hide();
+               //this.Close();
           }
 
           private void button2_Click(object sender, EventArgs e)
           {
                Form4 f = new Form4();
-               f.Show();
+               f.ShowDialog();
 
 
 
-               this.Hide();
+               //this.Hide();
           }
 
+         
           private void Form1_Load(object sender, EventArgs e)
           {
-              CreateDatabase2();
+              //CreateDatabase2();
           }
 
           public void CreateDatabase2()
@@ -64,4 +77,6 @@ namespace Maket
           }
 
      }
+
+     
 }

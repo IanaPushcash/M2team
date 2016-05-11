@@ -19,12 +19,38 @@ namespace Maket
 
           private void button3_Click(object sender, EventArgs e)
           {
-               Form1 f = new Form1();
-               f.Show();
 
 
 
-               this.Hide();
+               this.Close();
+          }
+
+          private void panel1_Paint(object sender, PaintEventArgs e)
+          {
+
+          }
+
+          private void Form4_Load(object sender, EventArgs e)
+          {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
           }
      }
 }

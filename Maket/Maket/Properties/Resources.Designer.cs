@@ -83,9 +83,29 @@ namespace Maket.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap foto2 {
+            get {
+                object obj = ResourceManager.GetObject("foto2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap grt {
             get {
                 object obj = ResourceManager.GetObject("grt", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Без_имени {
+            get {
+                object obj = ResourceManager.GetObject("Без имени", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

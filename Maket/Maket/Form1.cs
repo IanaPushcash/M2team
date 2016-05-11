@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
+using System.Xml.Linq;
 
 namespace Maket
 {
@@ -31,7 +33,6 @@ namespace Maket
 
           private void button1_Click(object sender, EventArgs e)
           {
-              
                Form2 f = new Form2();
 
                f.ShowDialog();
@@ -54,27 +55,20 @@ namespace Maket
          
           private void Form1_Load(object sender, EventArgs e)
           {
-              //CreateDatabase2();
+              if (!Directory.Exists("C:\\Fridge1.0")) Directory.CreateDirectory("C:\\Fridge1.0");
+              if (!File.Exists("C:\\Fridge1.0\\Products.xml"))
+              {
+                  XmlTextWriter writer = new XmlTextWriter("C:\\Fridge1.0\\Products.xml", Encoding.UTF8);
+                  writer.WriteStartDocument();
+                  writer.WriteStartElement("Products");
+                  writer.WriteEndElement();
+                  writer.WriteEndDocument();
+                  writer.Close();
+              }
+              
           }
 
-          public void CreateDatabase2()
-          {
-              File.Create(@"C:\myfridge.mdf");
-              MyFridge db = new MyFridge(@"C:\myfridge.mdf");
-              try
-              {
-                  if (db.DatabaseExists())
-                  {
-                      Console.WriteLine("Deleting old database...");
-                      db.DeleteDatabase();
-                  }
-                  db.CreateDatabase();
-              }
-              catch (Exception e)
-              {
-                  MessageBox.Show(e.ToString());
-              }
-          }
+          
 
      }
 

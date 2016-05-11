@@ -125,7 +125,6 @@ namespace Maket
                   Products.Add(new XElement("Product", s));
               }
               doc.Save("C:\\Fridge1.0\\Products.xml");
-
           }
      }
 }

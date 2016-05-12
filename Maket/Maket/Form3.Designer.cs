@@ -73,6 +73,9 @@
                this.vegetables.Items.AddRange(new object[] {
             "Картофель",
             "Капуста",
+            "Помидоры",
+            "Огурцы",
+            "Тыква",
             "Морковь",
             "Лук"});
                this.vegetables.Location = new System.Drawing.Point(21, 116);
@@ -121,6 +124,7 @@
                this.fruits.Items.AddRange(new object[] {
             "Яблоки",
             "Груши",
+            "Персики",
             "Апельсины",
             "Мандарины"});
                this.fruits.Location = new System.Drawing.Point(21, 116);
@@ -134,9 +138,10 @@
                // 
                this.meat.FormattingEnabled = true;
                this.meat.Items.AddRange(new object[] {
-            "Мясо",
-            "Рыба",
-            "Человек"});
+            "Мясо куриное",
+            "Колбаса",
+            "Бекон",
+            "Рыба"});
                this.meat.Location = new System.Drawing.Point(21, 116);
                this.meat.Name = "meat";
                this.meat.Size = new System.Drawing.Size(121, 21);
@@ -150,6 +155,9 @@
                this.milk.Items.AddRange(new object[] {
             "Молоко",
             "Кефир",
+            "Сыр",
+            "Творог",
+            "Сыворотка",
             "Сгущенка"});
                this.milk.Location = new System.Drawing.Point(21, 116);
                this.milk.Name = "milk";
@@ -163,8 +171,15 @@
                this.other.FormattingEnabled = true;
                this.other.Items.AddRange(new object[] {
             "Яйца",
+            "Хлеб",
+            "Макароны",
+            "Мука",
+            "Вода",
             "Грибы",
-            "Слизь"});
+            "Вино",
+            "Петрушка",
+            "Укроп",
+            "Варенье"});
                this.other.Location = new System.Drawing.Point(21, 116);
                this.other.Name = "other";
                this.other.Size = new System.Drawing.Size(121, 21);
@@ -191,6 +206,7 @@
                this.Name = "Form3";
                this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
                this.Text = "Добавление";
+               this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form3_FormClosing);
                this.ResumeLayout(false);
                this.PerformLayout();
 

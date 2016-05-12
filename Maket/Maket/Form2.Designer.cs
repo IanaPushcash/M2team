@@ -40,7 +40,7 @@
                // 
                this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
                this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-               this.button1.Location = new System.Drawing.Point(680, 33);
+               this.button1.Location = new System.Drawing.Point(680, 34);
                this.button1.Name = "button1";
                this.button1.Size = new System.Drawing.Size(128, 40);
                this.button1.TabIndex = 1;
@@ -52,12 +52,13 @@
                // 
                this.button2.BackColor = System.Drawing.SystemColors.ActiveCaption;
                this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-               this.button2.Location = new System.Drawing.Point(680, 154);
+               this.button2.Location = new System.Drawing.Point(680, 124);
                this.button2.Name = "button2";
                this.button2.Size = new System.Drawing.Size(128, 40);
                this.button2.TabIndex = 2;
                this.button2.Text = "Удалить";
                this.button2.UseVisualStyleBackColor = false;
+               this.button2.Click += new System.EventHandler(this.button2_Click);
                // 
                // button3
                // 
@@ -75,19 +76,6 @@
                // 
                this.listBox1.BackColor = System.Drawing.Color.White;
                this.listBox1.FormattingEnabled = true;
-               this.listBox1.Items.AddRange(new object[] {
-            "ОГУРЦЫ",
-            "ПАТЛАЖЕЛЕ",
-            "ЯЙЦЫ",
-            "МЯСО",
-            "",
-            "",
-            "",
-            "РЫБА",
-            "",
-            "",
-            "",
-            "СЕМГА"});
                this.listBox1.Location = new System.Drawing.Point(344, 124);
                this.listBox1.Name = "listBox1";
                this.listBox1.Size = new System.Drawing.Size(225, 199);

@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
+using System.Xml.Linq;
 
 namespace Maket
 {
@@ -49,10 +52,24 @@ namespace Maket
                //this.Hide();
           }
 
+         
           private void Form1_Load(object sender, EventArgs e)
           {
-
+              if (!Directory.Exists("C:\\Fridge1.0")) Directory.CreateDirectory("C:\\Fridge1.0");
+              if (!File.Exists("C:\\Fridge1.0\\Products.xml"))
+              {
+                  XmlTextWriter writer = new XmlTextWriter("C:\\Fridge1.0\\Products.xml", Encoding.UTF8);
+                  writer.WriteStartDocument();
+                  writer.WriteStartElement("Products");
+                  writer.WriteEndElement();
+                  writer.WriteEndDocument();
+                  writer.Close();
+              }
+              
           }
+
+          
+
      }
 
      

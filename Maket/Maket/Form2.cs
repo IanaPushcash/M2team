@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
+using System.Xml.Linq;
 
 namespace Maket
 {
@@ -21,7 +23,7 @@ namespace Maket
           {
                Form3 f = new Form3();
                f.ShowDialog();
-
+               button4_Click(null, null);
 
 
                //this.Hide();
@@ -44,6 +46,14 @@ namespace Maket
 
           private void button4_Click(object sender, EventArgs e)
           {
+              listBox1.Items.Clear();
+              XmlDocument xmlDocument = new XmlDocument();
+              xmlDocument.Load("C:\\Fridge1.0\\Products.xml");
+              XmlElement xRoot = xmlDocument.DocumentElement;
+              foreach (XmlNode node in xRoot)
+              {
+                  listBox1.Items.Add(node.InnerText);
+              }
                listBox1.Visible = true;
                button5.Enabled = true;
                button4.Enabled = false;
@@ -55,5 +65,24 @@ namespace Maket
                button5.Enabled = false;
                button4.Enabled = true;
           }
+
+          private void button2_Click(object sender, EventArgs e)
+          {
+              XDocument xDoc = XDocument.Load("C:\\Fridge1.0\\Products.xml");
+              foreach (XElement node in xDoc.Root.Nodes())
+              {
+                  try
+                  {
+                      if (listBox1.SelectedItem.Equals(node.Value))
+                          node.Remove();
+                  }
+                  catch (Exception c) { }
+              }
+              xDoc.Save("C:\\Fridge1.0\\Products.xml");
+              listBox1.Items.Remove(listBox1.SelectedItem);
+               
+          }
+
+         
      }
 }

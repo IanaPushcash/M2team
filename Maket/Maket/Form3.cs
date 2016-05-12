@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
+using System.Xml.Linq;
 
 namespace Maket
 {
@@ -22,35 +25,35 @@ namespace Maket
 
                if (vegetables.Visible == true)
                {
-                    if (vegetables.Text != "Продукт")
-                         label2.Text = label2.Text + "\n" + vegetables.Text;
-                    else MessageBox.Show("Выберите продукт!");
+                    productNExists(vegetables.Text);
                }
                else if (fruits.Visible == true)
                {
-                    if (fruits.Text != "Продукт")
-                         label2.Text = label2.Text + "\n" + fruits.Text;
-                    else MessageBox.Show("Выберите продукт!");
+                    productNExists(fruits.Text);
                }
                else if (meat.Visible == true)
                {
-                    if (meat.Text != "Продукт")
-                         label2.Text = label2.Text + "\n" + meat.Text;
-                    else MessageBox.Show("Выберите продукт!");
+                    productNExists(meat.Text);
                }
                else if (milk.Visible == true)
                {
-                    if (milk.Text != "Продукт")
-                         label2.Text = label2.Text + "\n" + milk.Text;
-                    else MessageBox.Show("Выберите продукт!");
+                    productNExists(milk.Text);
                }
                else if (other.Visible == true)
                {
-                    if (other.Text != "Продукт")
-                         label2.Text = label2.Text + "\n" + other.Text;
-                    else MessageBox.Show("Выберите продукт!");
+                    productNExists(other.Text);
                }
 
+          }
+
+          private void productNExists(string str)
+          {
+              if (str != "Продукт")
+              {
+                  if (!label2.Text.Split('\n').Contains(str))
+                      label2.Text = label2.Text + "\n" + str;
+              }
+              else MessageBox.Show("Выберите продукт!");
           }
 
           private void button2_Click(object sender, EventArgs e)
@@ -108,6 +111,20 @@ namespace Maket
           private void label2_Click(object sender, EventArgs e)
           {
 
+          }
+
+          private void Form3_FormClosing(object sender, FormClosingEventArgs e)
+          {
+              
+              ArrayList pr_str = new ArrayList(label2.Text.Split('\n'));
+              pr_str.RemoveAt(0);
+              XDocument doc = XDocument.Load("C:\\Fridge1.0\\Products.xml");
+              XElement Products = doc.Element("Products");
+              foreach(Object s in pr_str)
+              {
+                  Products.Add(new XElement("Product", s));
+              }
+              doc.Save("C:\\Fridge1.0\\Products.xml");
           }
      }
 }

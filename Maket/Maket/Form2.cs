@@ -82,5 +82,7 @@ namespace Maket
               listBox1.Items.Remove(listBox1.SelectedItem);
                
           }
+
+         
      }
 }

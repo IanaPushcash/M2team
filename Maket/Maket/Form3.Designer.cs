@@ -76,8 +76,12 @@
             "Помидоры",
             "Огурцы",
             "Тыква",
+
+            "Свекла",
+
             "Морковь",
-            "Лук"});
+            "Лук",
+            "Чеснок"});
                this.vegetables.Location = new System.Drawing.Point(21, 116);
                this.vegetables.Name = "vegetables";
                this.vegetables.Size = new System.Drawing.Size(121, 21);
@@ -126,7 +130,11 @@
             "Груши",
             "Персики",
             "Апельсины",
-            "Мандарины"});
+            "Мандарины",
+            "Лимон",
+            "Малина",
+            "Виноград",
+            "Ананас"});
                this.fruits.Location = new System.Drawing.Point(21, 116);
                this.fruits.Name = "fruits";
                this.fruits.Size = new System.Drawing.Size(121, 21);
@@ -138,9 +146,14 @@
                // 
                this.meat.FormattingEnabled = true;
                this.meat.Items.AddRange(new object[] {
+
+            "Мясо",
             "Мясо куриное",
             "Колбаса",
             "Бекон",
+            "Фарш",
+            "Сосиски",
+
             "Рыба"});
                this.meat.Location = new System.Drawing.Point(21, 116);
                this.meat.Name = "meat";
@@ -158,7 +171,11 @@
             "Сыр",
             "Творог",
             "Сыворотка",
-            "Сгущенка"});
+
+            "Сметана",
+            "Сгущенка",
+            "Майонез"});
+
                this.milk.Location = new System.Drawing.Point(21, 116);
                this.milk.Name = "milk";
                this.milk.Size = new System.Drawing.Size(121, 21);
@@ -173,12 +190,22 @@
             "Яйца",
             "Хлеб",
             "Макароны",
+
+            "Масло",
             "Мука",
+            "Мука кукурузная",
+            "Горошек",
+
             "Вода",
             "Грибы",
             "Вино",
             "Петрушка",
+
+            "Дрожжи",
             "Укроп",
+            "Квас",
+            "Орехи",
+
             "Варенье"});
                this.other.Location = new System.Drawing.Point(21, 116);
                this.other.Name = "other";

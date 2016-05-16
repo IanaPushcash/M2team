@@ -65,7 +65,10 @@ namespace Maket
                   writer.WriteEndDocument();
                   writer.Close();
               }
-              
+              if (!File.Exists("C:\\Fridge1.0\\BookOfRecipes.xml"))
+              {
+                  File.WriteAllText("C:\\Fridge1.0\\BookOfRecipes.xml",Properties.Resources.BookOfRecipes);
+              }
           }
 
           
